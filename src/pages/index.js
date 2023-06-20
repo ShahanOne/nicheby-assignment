@@ -86,6 +86,14 @@ export default function Home() {
           </button>
         </div>
       </div>
+      <div className="text-center">
+        <Link
+          href="/companies"
+          className="bg-indigo-500 hover:bg-indigo-600 px-6 py-2 rounded-2xl text-white my-2"
+        >
+          Get All Companies
+        </Link>
+      </div>
     </div>
   );
 }

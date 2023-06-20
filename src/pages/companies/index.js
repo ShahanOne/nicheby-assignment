@@ -3,7 +3,7 @@ import Link from 'next/link';
 export async function getStaticProps() {
   // Fetching companies data from the API
 
-  const res = await fetch('http:localhost:3000/api/companies');
+  const res = await fetch('http://localhost:3000/api/companies');
   const companies = await res.json();
   return { props: { companies } }; // Returning the fetched data as props
 }
