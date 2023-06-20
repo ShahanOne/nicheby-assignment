@@ -51,48 +51,52 @@ export default function Home() {
 
   return (
     <div className="mainDiv p-24">
-      <p className="text-4xl">Find your dream company ...</p>
-      <div className="grid grid-cols-3">
-        <div className="col-span-2 px-4 py-12">
-          <input
-            onFocus={() => setActive(true)}
-            // onBlur={() => setActive(false)}
-            className="border-gray-500 shadow-lg w-full px-1 py-2 border-2 rounded-full"
-            type="text"
-            onChange={handleChange}
-            value={companyName}
-            name="companyName"
-          />
-          {isActive && searchResults.length > 0 && (
-            <div className="results">
-              {searchResults.map((company, key) => (
-                <Link
-                  className="bg-gray-100 hover:bg-white border-gray-500 block px-1 py-2 border-2 rounded-full shadow"
-                  key={key}
-                  href={`/companies/${company.name}`}
-                >
-                  {company.name}
-                </Link>
-              ))}
-            </div>
-          )}
+      <div className=" px-8 py-20 bg-orange-400 rounded-lg shadow-lg">
+        <p className="text-4xl text-white font-bold">
+          Find your dream company ...
+        </p>
+        <div className="grid grid-cols-3">
+          <div className="col-span-2 py-12">
+            <input
+              onFocus={() => setActive(true)}
+              // onBlur={() => setActive(false)}
+              className="border-gray-500 shadow-lg w-full px-1 py-2 border-2 rounded-full"
+              type="text"
+              onChange={handleChange}
+              value={companyName}
+              name="companyName"
+            />
+            {isActive && searchResults.length > 0 && (
+              <div className="results">
+                {searchResults.map((company, key) => (
+                  <Link
+                    className="bg-orange-50 hover:bg-white border-orange-600 block px-1 my-1 py-2 border-2 rounded-full shadow"
+                    key={key}
+                    href={`/companies/${company.name}`}
+                  >
+                    {company.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+          <div className="py-12">
+            <button
+              onClick={getCompany}
+              className="bg-indigo-500 text-xl hover:bg-indigo-600 text-white mx-2 rounded-2xl px-4 py-2"
+            >
+              Search
+            </button>
+          </div>
         </div>
-        <div className="py-12">
-          <button
-            onClick={getCompany}
-            className="bg-yellow-500 text-xl hover:bg-yellow-600 text-white mx-2 rounded-2xl px-4 py-2"
+        <div className="text-center">
+          <Link
+            href="/companies"
+            className="bg-indigo-500 hover:bg-indigo-600 px-6 py-2 rounded-2xl text-white my-2"
           >
-            Search
-          </button>
+            Get All Companies
+          </Link>
         </div>
-      </div>
-      <div className="text-center">
-        <Link
-          href="/companies"
-          className="bg-indigo-500 hover:bg-indigo-600 px-6 py-2 rounded-2xl text-white my-2"
-        >
-          Get All Companies
-        </Link>
       </div>
     </div>
   );

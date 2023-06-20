@@ -19,11 +19,11 @@ export default function CompanyPage() {
   }, [companyname]);
 
   return (
-    <div className="grid grid-cols-2 p-12">
+    <div className="grid grid-cols-2 mx-20 my-12 p-12 rounded-lg shadow-lg bg-indigo-600 text-white text-center">
       {companyData ? (
         <>
           <div>
-            <p className="text-lg font-bold">{companyData.name}</p>{' '}
+            <p className="text-2xl font-bold">{companyData.name}</p>{' '}
           </div>
           <div>
             <img src={companyData.image} />
