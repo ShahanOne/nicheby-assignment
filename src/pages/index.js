@@ -11,6 +11,7 @@ export default function Home() {
   const [searchResults, setSearchResults] = useState([]); // State to store the filtered search results
   const [isActive, setActive] = useState(false); // State to track if the input field is active
   const [searchActive, setSearchActive] = useState(false);
+
   useEffect(() => {
     async function getCompanies() {
       const res = await fetch('/api/companies');
@@ -51,7 +52,7 @@ export default function Home() {
 
   return (
     <div className="mainDiv p-24">
-      <div className=" px-8 py-20 bg-orange-400 rounded-lg shadow-lg">
+      <div className=" px-8 py-24 h-[40rem] bg-orange-400 rounded-lg shadow-lg">
         <p className="text-4xl text-white font-bold">
           Find your dream company ...
         </p>
@@ -87,15 +88,15 @@ export default function Home() {
             >
               Search
             </button>
+            <div className=" py-4 px-2">
+              <Link
+                href="/companies"
+                className="bg-indigo-500 hover:bg-indigo-600 px-6 py-2 rounded-2xl text-white my-2"
+              >
+                Get All Companies
+              </Link>
+            </div>
           </div>
-        </div>
-        <div className="text-center">
-          <Link
-            href="/companies"
-            className="bg-indigo-500 hover:bg-indigo-600 px-6 py-2 rounded-2xl text-white my-2"
-          >
-            Get All Companies
-          </Link>
         </div>
       </div>
     </div>
